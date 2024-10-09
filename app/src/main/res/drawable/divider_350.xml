@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<layer-list xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="MissingDefaultResource">
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="rectangle">
+            <solid android:color="#ffffff" />
+
+        </shape>
+    </item>
+    <item
+        android:bottom="510dp"
+        android:left="-100dp"
+        android:right="-100dp"
+        android:top="-200dp">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="oval">
+            <gradient
+                android:angle="90"
+                android:endColor="#efefef"
+                android:startColor="#efefef" />
+        </shape>
+    </item>
+    <item
+        android:bottom="410dp"
+        android:left="-100dp"
+        android:right="-100dp"
+        android:top="-170dp">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="oval">
+            <gradient
+                android:angle="90"
+                android:endColor="@color/dark_orange"
+                android:startColor="@color/dark_orange"
+                android:type="linear" />
+        </shape>
+    </item>
+</layer-list>

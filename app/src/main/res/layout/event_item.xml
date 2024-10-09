@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:background="#FFFAFA"
+    android:orientation="vertical">
+
+    <com.android.db.swipemenulayout.SwipeMenuLayout
+        android:id="@+id/sml"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentView="@+id/content"
+        app:leftView="@+id/left"
+        app:rightView="@+id/right"
+        tools:ignore="MissingConstraints">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textviewDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@color/dark_orange"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold|italic"
+                app:layout_constraintEnd_toEndOf="@+id/imageGallery"
+                app:layout_constraintStart_toStartOf="@+id/imageGallery"
+                app:layout_constraintTop_toBottomOf="@+id/imageGallery"
+                tools:ignore="HardcodedText" />
+
+
+            <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+                android:id="@+id/imageGallery"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                app:imageScaleType="fitXY"
+                android:layout_marginBottom="21dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.369"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+            />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:ignore="NewApi">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/deleteEvent"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="160dp"
+                android:background="@drawable/icon_delete_event"
+                android:clickable="true"
+                android:padding="4dp"
+                android:textStyle="bold"
+                android:text=""
+                tools:ignore="HardcodedText,NewApi" />
+
+        </LinearLayout>
+    </com.android.db.swipemenulayout.SwipeMenuLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

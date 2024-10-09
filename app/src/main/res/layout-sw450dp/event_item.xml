@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/textviewDescription"
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:layout_marginTop="2dp"
+        android:background="#F57C00"
+        android:text="asddasads"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageGallery"
+        tools:ignore="MissingConstraints" />
+
+    <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+        android:id="@+id/imageGallery"
+        android:layout_width="652dp"
+        android:layout_height="449dp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:showNavigationButtons="false" />
+
+    <ImageView
+        android:id="@+id/deleteEvent"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/icon_delete_event"
+        app:layout_constraintBottom_toTopOf="@+id/textviewDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageGallery"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textviewDeleteEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:text=" Sil"
+        android:textAlignment="center"
+        android:textColor="@color/azure"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/deleteEvent"
+        app:layout_constraintStart_toStartOf="@+id/deleteEvent"
+        app:layout_constraintTop_toBottomOf="@+id/deleteEvent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

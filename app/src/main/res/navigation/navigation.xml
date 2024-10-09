@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/eventsAddFragment"
+        android:name="com.app.kayipetapp.presentation.events_add.EventMapFragment"
+        android:label="fragment_events_add"
+        tools:layout="@layout/fragment_event_map" >
+        <action
+            android:id="@+id/action_eventsAddFragment_to_eventImageSelectionFragment"
+            app:destination="@id/eventImageSelectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventsDetailFragment"
+        android:name="com.app.kayipetapp.presentation.events_detail.EventsDetailFragment"
+        android:label="fragment_events_detail"
+        tools:layout="@layout/fragment_events_detail" >
+        <argument
+            android:name="getEventsDetail"
+            app:argType="com.app.kayipetapp.domain.models.Event" />
+        <action
+            android:id="@+id/action_eventsDetailFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.app.kayipetapp.presentation.events.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_eventsDetailFragment"
+            app:destination="@id/eventsDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_eventsAddFragment"
+            app:destination="@id/eventsAddFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_userEventsFragment"
+            app:destination="@id/userEventsFragment" />
+        <argument
+            android:name="getEvent"
+            app:argType="com.app.kayipetapp.domain.models.Event"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="getEventFromDetail"
+            app:argType="com.app.kayipetapp.domain.models.Event"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.app.kayipetapp.presentation.auth.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.app.kayipetapp.presentation.auth.register.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventImageSelectionFragment"
+        android:name="com.app.kayipetapp.presentation.events_add.EventImageSelectionFragment"
+        android:label="fragment_event_image_selection"
+        tools:layout="@layout/fragment_event_image_selection" >
+        <action
+            android:id="@+id/action_eventImageSelectionFragment_to_eventDescriptionAndTimeFragment"
+            app:destination="@id/eventDescriptionAndTimeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventFinalCheckFragment"
+        android:name="com.app.kayipetapp.presentation.events_add.EventFinalCheckFragment"
+        android:label="fragment_event_final_check"
+        tools:layout="@layout/fragment_event_final_check" >
+        <action
+            android:id="@+id/action_eventFinalCheckFragment_to_eventsAddFragment"
+            app:destination="@id/eventsAddFragment" />
+        <action
+            android:id="@+id/action_eventFinalCheckFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/eventsAddFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventDescriptionAndTimeFragment"
+        android:name="com.app.kayipetapp.presentation.events_add.EventDescriptionAndTimeFragment"
+        android:label="fragment_event_description_and_time"
+        tools:layout="@layout/fragment_event_description_and_time" >
+        <action
+            android:id="@+id/action_eventDescriptionAndTimeFragment_to_eventFinalCheckFragment"
+            app:destination="@id/eventFinalCheckFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userEventsFragment"
+        android:name="com.app.kayipetapp.presentation.user.user_events.UserEventsFragment"
+        android:label="fragment_user_events"
+        tools:layout="@layout/fragment_user_events" />
+    <fragment
+        android:id="@+id/userProfileDetailFragment"
+        android:name="com.app.kayipetapp.presentation.user.user_profile_detail.UserProfileDetailFragment"
+        android:label="fragment_user_profile_detail"
+        tools:layout="@layout/fragment_user_profile_detail" >
+        <action
+            android:id="@+id/action_userProfileDetailFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/userProfileDetailFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_userProfileDetailFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.app.kayipetapp.presentation.auth.resetPassword.ResetPasswordFragment"
+        android:label="fragment_reset_passowrd"
+        tools:layout="@layout/fragment_reset_password" >
+        <action
+            android:id="@+id/action_resetPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+</navigation>
